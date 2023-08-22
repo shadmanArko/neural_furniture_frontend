@@ -58,31 +58,38 @@
   </script>
   
   <style scoped>
-  /* Style your top bars here */
-  .emergency-top-bar {
-    background-color: red;
-    color: white;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  .ecommerce-top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 10px;
-  }
-  
-  .logo img {
-    max-height: 50px;
-  }
-  
-  .buttons button {
-    margin-left: 10px;
-  }
+/* Emergency Top Bar */
+.emergency-top-bar {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
 
-  .video-panel {
+/* E-Commerce Top Bar */
+.ecommerce-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+  padding: 10px;
+}
+
+.logo img {
+  max-height: 50px;
+}
+
+.buttons .button {
+  background-color: #ffd700;
+  color: black;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Video Panel */
+.video-panel {
   text-align: center;
   padding: 20px;
 }
@@ -92,7 +99,8 @@
   height: auto;
 }
 
-  .picture-panel {
+/* Picture Panels */
+.picture-panel {
   text-align: center;
   padding: 20px;
 }
@@ -115,13 +123,10 @@
   margin: 5px;
 }
 
-.second-picture-panel img {
-  max-width: 100%;
-  height: auto;
-}
-
+/* Footer */
 .footer {
-  background-color: #f0f0f0;
+  background-color: #000000;
+  color: #ffffff;
   padding: 20px;
   text-align: center;
 }
