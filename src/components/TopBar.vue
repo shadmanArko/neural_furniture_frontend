@@ -17,24 +17,24 @@
       </div>
       <!-- Video Panel -->
     <div class="video-panel">
-      <video controls>
-        <source src="/path-to-your-video.mp4" type="video/mp4" />
+      <video autoplay loop muted>
+        <source src="../assets/file_example_MP4_640_3MG.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
 
        <!-- Picture Panel -->
     <div class="picture-panel">
-      <img src="/path-to-your-picture.png" alt="Picture" />
+      <img src="../assets/BedroomSet.png" alt="Picture" />
     </div>
 
     <!-- Second Picture Panel (side by side) -->
     <div class="second-picture-panel">
       <div class="picture">
-        <img src="/path-to-your-picture1.png" alt="Picture 1" />
+        <img src="../assets/Sofa.jpeg" alt="Picture 1" />
       </div>
       <div class="picture">
-        <img src="/path-to-your-picture2.png" alt="Picture 2" />
+        <img src="../assets/Sofa.jpeg" alt="Picture 2" />
       </div>
     </div>
 
@@ -91,36 +91,49 @@
 /* Video Panel */
 .video-panel {
   text-align: center;
+  width: 100%;
   padding: 20px;
+  box-sizing: border-box;
+  background-color: #000000;
 }
 
 .video-panel video {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
 /* Picture Panels */
 .picture-panel {
-  text-align: center;
-  padding: 20px;
+    text-align: center;
+  width: 100%; /* Ensure the picture panel takes up the full width */
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .picture-panel img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
 .second-picture-panel {
   display: flex;
+  width: 100%;
+  flex-wrap: wrap; /* Allow pictures to wrap to the next line if necessary */
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px;
+  align-items: flex-start; /* Align pictures at the top of the container */
+  padding: 0px;
 }
 
 .second-picture-panel .picture {
-  flex-basis: calc(50% - 10px);
+  flex-basis: calc(50% - 10px); /* Adjust for spacing */
   margin: 5px;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  overflow: hidden; /* Hide any overflowing content */
+}
+
+.second-picture-panel img {
+  width: 100%; /* Ensure the image fits within its container */
+  height: auto;
 }
 
 /* Footer */
