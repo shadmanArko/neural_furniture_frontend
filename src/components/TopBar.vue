@@ -1,3 +1,16 @@
+<script setup>
+import { useRouter } from 'vue-router';
+const router = useRouter();
+
+const navigateToSofa = () => {
+  router.push('/sofa');
+};
+
+const navigateToBed = () => {
+  router.push('/bed');
+};
+</script>
+
 <template>
     <div>
       <!-- Emergency Top Bar -->
@@ -11,8 +24,9 @@
           <img src="/path-to-your-logo.png" alt="Logo" />
         </div>
         <div class="buttons">
-          <button>Button 1</button>
-          <button>Button 2</button>
+            <button @click="navigateToSofa">Button 1</button>
+            <button @click="navigateToBed">Button 2</button>
+
         </div>
       </div>
       <!-- Video Panel -->
@@ -53,9 +67,7 @@
     </div>
   </template>
   
-  <script setup>
-  // You can import any required modules here
-  </script>
+
   
   <style scoped>
 /* Emergency Top Bar */
