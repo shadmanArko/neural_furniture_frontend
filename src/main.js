@@ -1,14 +1,14 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import TopBar from './components/TopBar.vue';
+import HomePage from './components/HomePage.vue'
 import SofaPage from './components/SofaPage.vue';
 import BedPage from './components/BedPage.vue';
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', component: TopBar },
+    { path: '/', component: HomePage },
     { path: '/sofa', component: SofaPage },
     { path: '/bed', component: BedPage },
   ],
