@@ -35,7 +35,7 @@
 .video-panel {
   text-align: center;
   width: 100%;
-  padding: 20px;
+  padding: 0px;
   box-sizing: border-box;
   background-color: #000000;
 }
@@ -49,7 +49,7 @@
 .picture-panel {
     text-align: center;
   width: 100%; /* Ensure the picture panel takes up the full width */
-  padding: 10px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
@@ -68,8 +68,8 @@
 }
 
 .second-picture-panel .picture {
-  flex-basis: calc(50% - 10px); /* Adjust for spacing */
-  margin: 5px;
+  flex-basis: calc(50% ); /* Adjust for spacing */
+  margin: 0px;
   box-sizing: border-box; /* Include padding and border in the element's total width */
   overflow: hidden; /* Hide any overflowing content */
 }
