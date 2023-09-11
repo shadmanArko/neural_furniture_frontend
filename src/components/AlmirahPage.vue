@@ -4,23 +4,48 @@
      <h1>Almirah Collection</h1>
      <!-- Display your almirah collection content here -->
    </div>
-   
-   <div class="product-page">
-     <div class="product-container">
-       <img src="../assets/BedroomSet.png" alt="Picture" />
-       <!-- Product details go here -->
-     </div>
-     <div class="product-description">
-       <!-- Product description goes here -->
-       <p>Description of Sofa</p>
+
+   <!-- Product card grid -->
+   <div class="product-card-grid">
+     <div class="product-card" v-for="(product, index) in products" :key="index">
+       <img :src="product.imageUrl" :alt="product.name" />
+       <p>{{ product.name }}</p>
      </div>
    </div>
+
+   <!-- Product with description on right -->
+<!--   <div class="product-page">-->
+<!--     <div class="product-container">-->
+<!--       <img src="../assets/BedroomSet.png" alt="Picture" />-->
+<!--       &lt;!&ndash; Product details go here &ndash;&gt;-->
+<!--     </div>-->
+<!--     <div class="product-description">-->
+<!--       &lt;!&ndash; Product description goes here &ndash;&gt;-->
+<!--       <p>Description of Sofa</p>-->
+<!--     </div>-->
+<!--   </div>-->
    
   </template>
   
   <script>
   export default {
     name: 'AlmirahPage',
+    data() {
+      return {
+        products: [
+          { name: 'Product 1', imageUrl: require('../assets/BedroomSet.png') },
+          { name: 'Product 2', imageUrl: require('../assets/BedroomSet.png') },
+          { name: 'Product 3', imageUrl: require('../assets/BedroomSet.png') },
+          { name: 'Product 4', imageUrl: require('../assets/BedroomSet.png') },
+          { name: 'Product 5', imageUrl: require('../assets/BedroomSet.png') },
+          { name: 'Product 6', imageUrl: require('../assets/BedroomSet.png') },
+          { name: 'Product 7', imageUrl: require('../assets/BedroomSet.png') },
+          { name: 'Product 8', imageUrl: require('../assets/BedroomSet.png') },
+          { name: 'Product 9', imageUrl: require('../assets/BedroomSet.png') },
+          // Add more products here
+        ],
+      };
+    },
   };
   </script>
   
@@ -56,6 +81,31 @@
   
       .product-description {
         width: 100%;
+      }
+    }
+
+
+    .product-card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .product-card {
+      flex: 0 1 calc(33.333% - 20px); /* Three cards per row with spacing */
+      margin: 10px;
+      text-align: center;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* For mobile view */
+    @media (max-width: 768px) {
+      .product-card {
+        flex: 0 1 calc(100% - 20px); /* One card per row with spacing */
       }
     }
   </style>
