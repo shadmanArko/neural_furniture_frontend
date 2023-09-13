@@ -1,15 +1,21 @@
  <template>
-   
-   <div>
-     <h1>Almirah Collection</h1>
-     <!-- Display your almirah collection content here -->
-   </div>
 
-   <!-- Product card grid -->
-   <div class="product-card-grid">
-     <div class="product-card" v-for="(product, index) in products" :key="index">
-       <img :src="product.imageUrl" :alt="product.name" />
-       <p>{{ product.name }}</p>
+   <div>
+     <div>
+       <h1>Almirah Collection</h1>
+
+       <!-- Product card grid -->
+       <div class="product-card-grid">
+         <router-link
+             v-for="product in products"
+             :key="product.id"
+             :to="'/product/' + product.id"
+             class="product-card"
+         >
+           <img :src="product.imageUrl" :alt="product.name" />
+           <p>{{ product.name }}</p>
+         </router-link>
+       </div>
      </div>
    </div>
 
@@ -33,15 +39,15 @@
     data() {
       return {
         products: [
-          { name: 'Product 1', imageUrl: require('../assets/BedroomSet.png') },
-          { name: 'Product 2', imageUrl: require('../assets/BedroomSet.png') },
-          { name: 'Product 3', imageUrl: require('../assets/BedroomSet.png') },
-          { name: 'Product 4', imageUrl: require('../assets/BedroomSet.png') },
-          { name: 'Product 5', imageUrl: require('../assets/BedroomSet.png') },
-          { name: 'Product 6', imageUrl: require('../assets/BedroomSet.png') },
-          { name: 'Product 7', imageUrl: require('../assets/BedroomSet.png') },
-          { name: 'Product 8', imageUrl: require('../assets/BedroomSet.png') },
-          { name: 'Product 9', imageUrl: require('../assets/BedroomSet.png') },
+          {id: 1, name: 'Product 1', imageUrl: require('../assets/BedroomSet.png') },
+          {id: 2, name: 'Product 2', imageUrl: require('../assets/BedroomSet.png') },
+          {id: 3, name: 'Product 3', imageUrl: require('../assets/BedroomSet.png') },
+          {id: 4, name: 'Product 4', imageUrl: require('../assets/BedroomSet.png') },
+          {id: 5, name: 'Product 5', imageUrl: require('../assets/BedroomSet.png') },
+          {id: 6, name: 'Product 6', imageUrl: require('../assets/BedroomSet.png') },
+          {id: 7, name: 'Product 7', imageUrl: require('../assets/BedroomSet.png') },
+          {id: 8, name: 'Product 8', imageUrl: require('../assets/BedroomSet.png') },
+          {id: 9, name: 'Product 9', imageUrl: require('../assets/BedroomSet.png') },
           // Add more products here
         ],
       };

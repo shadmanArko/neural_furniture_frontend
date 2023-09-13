@@ -9,6 +9,7 @@ import DressingTablePage from './components/DressingTablePage.vue';
 import ShoeRackPage from './components/ShoeRackPage.vue';
 import ShowcasePage from './components/ShowcasePage.vue';
 import SofaPage from './components/SofaPage.vue';
+import ProductDetail from './components/ProductDetails.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -21,6 +22,7 @@ const router = createRouter({
     { path: '/shoerack', component: ShoeRackPage },
     { path: '/showcase', component: ShowcasePage },
     { path: '/sofa', component: SofaPage },
+    { path: '/product/:id', component: ProductDetail, props: true },
   ],
 });
 
