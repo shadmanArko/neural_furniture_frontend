@@ -3,6 +3,7 @@
       <h1>Dressing Table Collection</h1>
       <!-- Display your bed collection content here -->
     </div>
+    
   </template>
   
   <script>
