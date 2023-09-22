@@ -36,10 +36,10 @@
     <div class="mobile-menu" :class="{ active: isMenuOpen }">
       <ul>
         <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/about">About</router-link></li>
-        <li><router-link to="/services">Services</router-link></li>
-        <li><router-link to="/portfolio">Portfolio</router-link></li>
-        <li><router-link to="/contact">Contact</router-link></li>
+        <li><router-link to="/almirah">About</router-link></li>
+        <li><router-link to="/almirah">Services</router-link></li>
+        <li><router-link to="/almirah">Portfolio</router-link></li>
+        <li><router-link to="/almirah">Contact</router-link></li>
       </ul>
       <!-- Close Menu Button -->
       <button class="close-button" @click="closeMenu">
@@ -117,7 +117,7 @@
   right: -200px;
   width: 200px;
   height: 100vh;
-  background: #ff004f;
+  background: #ff0051;
   padding-top: 50px;
   z-index: 2;
   transition: right 0.5s;
