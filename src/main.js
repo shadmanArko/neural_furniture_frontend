@@ -10,6 +10,7 @@ import ShoeRackPage from './components/ShoeRackPage.vue';
 import ShowcasePage from './components/ShowcasePage.vue';
 import SofaPage from './components/SofaPage.vue';
 import ProductDetail from './components/ProductDetails.vue';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 const router = createRouter({
   history: createWebHistory(),

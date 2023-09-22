@@ -24,7 +24,12 @@
 
       <!-- Buy button with WhatsApp link -->
       <a :href="whatsappLink" target="_blank" class="whatsapp-button">
-        <i class="fa fa-whatsapp whatsapp-icon"></i> Buy on WhatsApp
+        <i class="fab fa-whatsapp whatsapp-icon"></i> Buy on WhatsApp
+      </a>
+
+      <!-- Buy on Messenger button -->
+      <a :href="messengerLink" target="_blank" class="messenger-button">
+        <i class="fab fa-facebook-messenger messenger-icon"></i> Buy on Messenger
       </a>
    
     </div>
@@ -50,6 +55,19 @@ export default {
       const phoneNumber = '+8801533628404'; // Replace with your WhatsApp phone number
       const message = `I want to buy ${this.selectedProduct.name}.`; // Customize the message
       return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    },
+    messengerLink() {
+      const facebookPageUsername = 'neuralfurniture'; // Replace with your Page username
+      const productId = this.selectedProduct.id; // Get the product ID
+
+      // Customize the default message based on the product ID
+      const message = `I want to buy Product ${productId}.`; 
+
+      // Encode the message for the URL
+      const encodedMessage = encodeURIComponent(message);
+
+      return `https://m.me/${facebookPageUsername}?ref=w${productId}&text=${encodedMessage}`;
+ 
     },
   },
   data() {
@@ -149,5 +167,38 @@ export default {
 /* Hover style for WhatsApp button */
 .whatsapp-button:hover {
   background-color: #128c7e; /* Darker shade of WhatsApp green on hover */
+}
+
+/* Style for Messenger button */
+.messenger-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1877f2; /* Facebook blue color */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  /* Center icon and text */
+  display: flex;
+  align-items: center;
+}
+
+/* Style for Messenger icon */
+.messenger-icon {
+  /* Use the Facebook Messenger icon image as background */
+  /* background-image: url('facebook-messenger.png');
+  background-size: cover; */
+  /* width: 20px; 
+  height: 20px;  */
+
+  margin-right: 10px;
+  font-size:28px
+}
+
+/* Hover style for Messenger button */
+.messenger-button:hover {
+  background-color: #0d62a0; /* Darker shade of Facebook blue on hover */
 }
 </style>

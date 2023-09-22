@@ -1,11 +1,4 @@
-<script setup>
-// import { useRouter } from 'vue-router';
-// const router = useRouter();
-// const navigateToAlmirah = () => {
-//   router.push('/almirah');
-// };
 
-</script>
 
 <template>
     <div>
@@ -33,10 +26,42 @@
         </div>
       </div>
       </div>
+
+      <!-- Hamburger Menu Button -->
+      <button class="menu-button" @click="toggleMenu">
+      <i class="fa fa-bars"></i>
+    </button>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" :class="{ active: isMenuOpen }">
+      <ul>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/about">About</router-link></li>
+        <li><router-link to="/services">Services</router-link></li>
+        <li><router-link to="/portfolio">Portfolio</router-link></li>
+        <li><router-link to="/contact">Contact</router-link></li>
+      </ul>
+      <!-- Close Menu Button -->
+      <button class="close-button" @click="closeMenu">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
     </div>
   </template>
   
-
+  <script setup>
+  import { ref } from 'vue';
+  
+  const isMenuOpen = ref(false);
+  
+  const toggleMenu = () => {
+    isMenuOpen.value = !isMenuOpen.value;
+  };
+  
+  const closeMenu = () => {
+    isMenuOpen.value = false;
+  };
+  </script>
   
 <style scoped>
 /* Emergency Top Bar */
@@ -83,5 +108,49 @@
   justify-content: center;
   width: 100%;
 }
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -200px;
+  width: 200px;
+  height: 100vh;
+  background: #ff004f;
+  padding-top: 50px;
+  z-index: 2;
+  transition: right 0.5s;
+}
+
+/* Active class to slide in the menu */
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+/* Menu Button Styles */
+.menu-button {
+  display: none; /* Hide by default for larger screens */
+  /* Add styles for your menu button icon */
+}
+
+/* Close Button Styles */
+.close-button {
+  /* Add styles for your close button icon */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .buttons {
+    display: none; /* Hide the regular navigation links */
+  }
+
+  /* Display the menu button for mobile */
+  .menu-button {
+    display: block;
+    /* Add styles for your menu button icon */
+  }
+}
+
 </style>
   
